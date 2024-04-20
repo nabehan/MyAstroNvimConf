@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
@@ -31,12 +31,35 @@ return {
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-        wrap = false, -- sets vim.opt.wrap
+        wrap = true, -- sets vim.opt.wrap
+        -- Yoshihito add options
+        encoding = "utf-8",
+        fileencoding = "utf-8",
+        fileencodings = "usc-bom,utf-8,sjis,euc-jp,iso2022-jp,cp932,utf-16le,utf-16,latein1,default",
+        helplang = "ja", -- 日本語helpにする
+        ignorecase = true, -- 検索するときに大文字小文字を区別しない
+        smartcase = true, -- 小文字で検索すると大文字と小文字を無視して検索
+        wrapscan = true, -- 検索がファイル末尾まで進んだら、ファイル先頭から再検索
+        hlsearch = true, -- 検索結果をハイライト表示
+        cmdheight = 2, -- メッセージ表示欄を2行確保
+        laststatus = 2, -- ステータス行を常に表示
+        showcmd = true, -- ウィンドウの右下にまだ実行していない入力中のコマンドを表示
+        display = "lastline", -- 省略されずに表示
+        scrolloff = 3, -- 3行残してスクロール
+        history = 10000,
+        shiftwidth = 2,
+        expandtab = true,
+        softtabstop = 2,
+        virtualedit = "onemore", -- 行末の1文字先までカーソルを移動
+        whichwrap = "b,s,h,l,<,>,[,],~", -- 行をまたいで移動
+        termguicolors = true,
+        background = "dark",
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
+        matchpairs_textobject = 1,
       },
     },
     -- Mappings can be configured through AstroCore as well.
