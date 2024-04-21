@@ -41,8 +41,8 @@ return {
         smartcase = true, -- 小文字で検索すると大文字と小文字を無視して検索
         wrapscan = true, -- 検索がファイル末尾まで進んだら、ファイル先頭から再検索
         hlsearch = true, -- 検索結果をハイライト表示
-        cmdheight = 2, -- メッセージ表示欄を2行確保
-        laststatus = 2, -- ステータス行を常に表示
+        -- cmdheight = 2, -- メッセージ表示欄を2行確保
+        -- laststatus = 2, -- ステータス行を常に表示
         showcmd = true, -- ウィンドウの右下にまだ実行していない入力中のコマンドを表示
         display = "lastline", -- 省略されずに表示
         scrolloff = 3, -- 3行残してスクロール
@@ -54,12 +54,15 @@ return {
         whichwrap = "b,s,h,l,<,>,[,],~", -- 行をまたいで移動
         termguicolors = true,
         background = "dark",
+        showmatch = true,
+        matchtime = 1,
+        matchpairs = "(:),{:},[:],<:>,（:）,「:」,『:』,《:》,〈:〉,｛:｝,［:］,【:】",
+        -- ambiwidth = double,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
-        matchpairs_textobject = 1,
       },
     },
     -- Mappings can be configured through AstroCore as well.

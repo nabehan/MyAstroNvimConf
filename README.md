@@ -1,12 +1,12 @@
-# AstroNvim Template
+# AstroNvim テンプレート
 
-**NOTE:** This is for AstroNvim v4+
+**注記:** これは AstroNvim v4+ 用です
 
-A template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim)
+[AstroNvim](https://github.com/AstroNvim/AstroNvim) を始めるためのテンプレートです。
 
-## 🛠️ Installation
+## 🛠️ インストール方法
 
-#### Make a backup of your current nvim and shared folder
+#### 現在の nvim と共有フォルダのバックアップを取る
 
 ```shell
 mv ~/.config/nvim ~/.config/nvim.bak
@@ -15,20 +15,49 @@ mv ~/.local/state/nvim ~/.local/state/nvim.bak
 mv ~/.cache/nvim ~/.cache/nvim.bak
 ```
 
-#### Create a new user repository from this template
+#### AstroNvim/テンプレートから新しいユーザーリポジトリを作成する
 
-Press the "Use this template" button above to create a new repository to store your user configuration.
+本家 [AstroNvim/template](https://github.com/AstroNvim/template) の github に移動します。
 
-You can also just clone this repository directly if you do not want to track your user configuration in GitHub.
+右上の “Use this template” ボタンを押して、ユーザー設定を保存する新しいリポジトリを作成します。
 
-#### Clone the repository
+GitHubでユーザー設定を追跡したくない場合は、本家のリポジトリを直接クローンすることもできます。
+
+#### リポジトリをクローンする
 
 ```shell
 git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
 ```
 
-#### Start Neovim
+#### Neovim を起動する
 
 ```shell
 nvim
+```
+
+自動で各種 plugin が インストールされます。
+
+## カスタマイズ方法の覚え書き
+
+### plugin の追加
+
+#### Astrocommunity に無い plugin の追加
+
+`puts '~/.config/nvim/lua/plugins/user.lua' ` に変更を加える
+
+1行目をコメントアウトします
+
+目的の plugin を 次のように記載します。
+
+```lua
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
+---@type LazySpec
+return {
+-- == Examples of Overriding Plugins ==
+  "h-hg/fcitx.nvim",
+  {
+    "h-hg/fcitx.nvim",
+  },
+}
 ```
