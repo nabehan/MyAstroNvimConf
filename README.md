@@ -43,7 +43,7 @@ nvim
 
 #### Astrocommunity に無い plugin の追加
 
-`puts '~/.config/nvim/lua/plugins/user.lua' ` に変更を加える
+`~/.config/nvim/lua/plugins/user.lua` に変更を加える
 
 1行目をコメントアウトします
 
